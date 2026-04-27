@@ -1,26 +1,91 @@
+/* =============================================================================
+   GLOBALS.CSS — Nicholas Halim Portfolio  |  Tailwind CSS v4
+   =============================================================================
+   RULE: All @import statements must come FIRST before any other CSS rules.
+   Order: 1) Google Fonts  2) Tailwindcss  3) @theme  4) @layer base/utilities
+   ============================================================================= */
+
+/* ── 1. FONT IMPORT — must be the very first line ─────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* ── 2. TAILWIND IMPORT — must come after all @import url() calls ─────────── */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+/* ── 3. THEME CONFIGURATION ──────────────────────────────────────────────────
+   @theme replaces tailwind.config.js in v4.
+   Every variable here auto-generates a utility class:
+     --color-bone    → bg-bone, text-bone, border-bone, etc.
+     --color-signal  → bg-signal, text-signal, hover:text-signal, etc.
+     --font-mono     → font-mono
+     --animate-*     → animate-fade-in, animate-slide-up
+   ──────────────────────────────────────────────────────────────────────────── */
+@theme {
+
+  /* COLORS */
+  --color-bone:         #F0EBE0;   /* Off-white parchment — main background   */
+  --color-bone-dark:    #E0DACE;   /* Slightly darker — subtle hover bg        */
+  --color-pitch:        #0D0D0D;   /* Near-black — text & borders              */
+  --color-signal:       #E85D04;   /* Vibrant orange — accents & CTAs          */
+  --color-signal-dark:  #C44D00;   /* Darker orange — hover on orange elements */
+
+  /* FONT */
+  --font-mono: "Space Mono", "JetBrains Mono", "Fira Code", "Courier New", monospace;
+
+  /* KEYFRAMES */
+  --keyframes-fadeIn: {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  };
+
+  --keyframes-slideUp: {
+    0%   { opacity: 0; transform: translateY(24px); }
+    100% { opacity: 1; transform: translateY(0); }
+  };
+
+  /* ANIMATIONS — these become the animate-fade-in and animate-slide-up classes */
+  --animate-fade-in:  fadeIn  0.9s ease-in-out forwards;
+  --animate-slide-up: slideUp 0.7s ease-out    forwards;
+
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ── 4. BASE STYLES ──────────────────────────────────────────────────────────
+   Default HTML element styles applied after Tailwind's reset.
+   ──────────────────────────────────────────────────────────────────────────── */
+@layer base {
+
+  html {
+    scroll-behavior: smooth;
   }
+
+  body {
+    background-color: #F0EBE0;
+    color: #0D0D0D;
+    font-family: "Space Mono", "JetBrains Mono", "Fira Code", monospace;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar       { width: 5px; }
+  ::-webkit-scrollbar-track { background: #F0EBE0; }
+  ::-webkit-scrollbar-thumb { background: #0D0D0D; }
+  ::-webkit-scrollbar-thumb:hover { background: #E85D04; }
+
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+/* ── 5. CUSTOM UTILITIES ─────────────────────────────────────────────────────
+   Custom classes with full Tailwind variant support (hover:, md:, group-hover:)
+   ──────────────────────────────────────────────────────────────────────────── */
+@layer utilities {
+
+  /* Subtle graph-paper grid used in the Hero section background */
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, rgba(13, 13, 13, 0.055) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(13, 13, 13, 0.055) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
 }
