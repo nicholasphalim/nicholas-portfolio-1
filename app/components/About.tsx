@@ -18,7 +18,7 @@
 const SYSTEM_INFO = [
   { label: 'STATUS',    value: 'SOPHOMORE — YEAR 2'                },
   { label: 'MAJOR',     value: 'INFORMATION SYSTEMS & TECHNOLOGY'  },
-  { label: 'INSTITUTE', value: 'ITB (Bandung, Indonesia)'           },
+  { label: 'INSTITUTE', value: 'Binus University'           },
   { label: 'FOCUS',     value: 'SOFTWARE / WEB DEVELOPMENT'         },
   { label: 'HOBBIES',   value: 'PHOTOGRAPHY · MUSIC · ART'          },
   { label: 'STATUS',    value: 'OPEN TO COLLABORATION'              },
