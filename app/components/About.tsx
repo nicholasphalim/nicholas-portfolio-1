@@ -17,8 +17,8 @@
 // Stored as an array so it's easy to add/remove rows without touching the JSX.
 const SYSTEM_INFO = [
   { label: 'STATUS',    value: 'SOPHOMORE — YEAR 2'                },
-  { label: 'MAJOR',     value: 'INFORMATION SYSTEMS & TECHNOLOGY'  },
-  { label: 'INSTITUTE', value: 'Institut Teknologi Bandung (ITB)'           },
+  { label: 'MAJOR',     value: 'Teknik Informatika'  },
+  { label: 'INSTITUTE', value: 'Binus University'           },
   { label: 'FOCUS',     value: 'SOFTWARE / WEB DEVELOPMENT'         },
   { label: 'HOBBIES',   value: 'PHOTOGRAPHY · MUSIC · ART'          },
   { label: 'STATUS',    value: 'OPEN TO COLLABORATION'              },
