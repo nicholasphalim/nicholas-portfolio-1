@@ -1,3 +1,5 @@
+"use client";
+
 // =============================================================================
 // app/components/Footer.tsx
 // =============================================================================
@@ -30,7 +32,7 @@ const LINKS = [
   {
     label:   'EMAIL',
     command: 'send --mail',
-    href:    'mailto:nicholashalim28@gmail.com', // ← Replace with real email
+    href:    'https://mail.google.com/mail/?view=cm&fs=1&to=nicholashalim28@gmail.com', // Langsung buka Gmail Compose di browser
   },
 ];
 

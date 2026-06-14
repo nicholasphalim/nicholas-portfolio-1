@@ -15,7 +15,7 @@ import './globals.css';
 // Next.js uses this object to set the <title> and <meta description> tags.
 // These are important for SEO and how the page appears in browser tabs/bookmarks.
 export const metadata: Metadata = {
-  title:       'Nicholas Halim — Portfolio',
+  title:       "nicho's portfolio",
   description: 'Sophomore in Information Systems & Technology at ITB | Aspiring Software Engineer',
 };
 
